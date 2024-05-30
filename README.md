@@ -9,7 +9,9 @@ Project utilizing Python to showcase ability to to interact with a SQL database,
 ## Project Start-up
 
 -Clone github repository to VS Code
+
 -Add .gitignore and requirements.txt
+
 -Create Virtual Environment
 ```python
 python3 -m venv .venv
