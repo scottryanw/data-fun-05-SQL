@@ -11,16 +11,16 @@ Project utilizing Python to showcase ability to to interact with a SQL database,
 -Clone github repository to VS Code
 -Add .gitignore and requirements.txt
 -Create Virtual Environment
-
+```python
 python3 -m venv .venv
 source .venv/bin/activate
-
+```
 
 -Install Dependencies and Freeze Requirements
-
+```python
 python3 -m pip install pandas pyarrow
 python3 -m pip freeze > requirements.txt
-
+```
 
 ## Git Add/Commit/Push
 ```python
