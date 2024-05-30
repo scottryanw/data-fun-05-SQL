@@ -12,21 +12,19 @@ Project utilizing Python to showcase ability to to interact with a SQL database,
 -Add .gitignore and requirements.txt
 -Create Virtual Environment
 
-''' 
 python3 -m venv .venv
 source .venv/bin/activate
-'''
+
 
 -Install Dependencies and Freeze Requirements
 
-'''
 python3 -m pip install pandas pyarrow
 python3 -m pip freeze > requirements.txt
-'''
+
 
 ## Git Add/Commit/Push
-"""
+```python
 git add .
 git commit -m "...insert commit comment"
 git push origin main
-"""
+```
