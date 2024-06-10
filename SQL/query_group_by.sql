@@ -1,0 +1,1 @@
+SELECT * FROM books GROUP BY year_published ORDER BY year_published DESC;
