@@ -77,13 +77,8 @@ def query_aggregation():
             sql_file = pathlib.Path('sql', 'query_aggregation.sql')
             with open(sql_file, "r") as file:
                 sql_script = file.read()
-            cursor = conn.execute(sql_script)
-            result = cursor.fetchone()
-            print("Total Books:", result[0])
-            print("Oldest Book:", round(result[1]))
-            print("Newest Book:", round(result[2]))
-            print("Average Year Published:", round(result[3]))
-            
+            conn.executescript(sql_script)
+            print("Query Aggregation executed successfully.")
     except sqlite3.Error as e:
         print("Error querying aggregation for books:", e)
 
@@ -93,10 +88,8 @@ def query_filter():
             sql_file = pathlib.Path('sql', 'query_filter.sql')
             with open(sql_file, "r") as file:
                 sql_script = file.read()
-            cursor = conn.execute(sql_script)
-            books = cursor.fetchall()
-            for book in books:
-                print(book[1], book[2])
+            conn.executescript(sql_script)
+            print("Query Filter executed successfully.")
     except sqlite3.Error as e:
         print("Error filtering book data:", e)
 
@@ -106,10 +99,8 @@ def query_sorting():
             sql_file = pathlib.Path('sql', 'query_aggregation.sql')
             with open(sql_file, "r") as file:
                 sql_script = file.read()
-            cursor = conn.execute(sql_script)
-            books = cursor.fetchall()
-            for book in books:
-                print(book[0], book[1])
+            conn.executescript(sql_script)
+            print("Query Sorting executed successfully.")
     except sqlite3.Error as e:
         print("Error sorting book data:", e)
 
@@ -120,10 +111,8 @@ def query_group_by():
             sql_file = pathlib.Path('sql', 'query_group_by.sql')
             with open(sql_file, "r") as file:
                 sql_script = file.read()
-            cursor = conn.cursor()
-            cursor.execute(sql_script)
-            results = cursor.fetchall()
-            print("Query executed successfully.")
+            conn.executescript(sql_script)
+            print("Query Group By executed successfully.")
     except sqlite3.Error as e:
         print("Error executing query:", e)
 
@@ -133,11 +122,8 @@ def query_join():
             sql_file = pathlib.Path('sql', 'query_join.sql')
             with open(sql_file, "r") as file:
                 sql_script = file.read()
-            cursor = conn.execute(sql_script)
-            rows = cursor.fetchall()
-            for row in rows:
-                print(f"Title: {row[0]}, Author's Last Name: {row[3]}")
-            print("Query executed successfully.")
+            conn.executescript(sql_script)
+            print("Query Join executed successfully.")
     except sqlite3.Error as e:
         print("Error executing query:", e)
 
